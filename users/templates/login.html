@@ -1,0 +1,14 @@
+<div>
+  Username must be: Milos, Vladimir or Jelica (First letter uppercase)</br>
+  Everything you type for password will pass form: 
+    <!-- <input type="checkbox" ng-model="auth.isLoggedIn" /> -->
+
+    <form class="form-signin">
+        <h2 class="form-signin-heading">Please login</h2>
+        <label for="inputEmail" class="sr-only">Username</label>
+        <input type="name" id="inputEmail" class="form-control" placeholder="Username" ng-model="user.name" required="" autofocus="">
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" class="form-control" placeholder="Password" ng-model="user.password" required="">
+        <button class="btn btn-lg btn-primary btn-block" type="submit" ng-click = "save(user)">Login</button>
+	</form>
+</div>

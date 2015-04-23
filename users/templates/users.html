@@ -1,0 +1,20 @@
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-6">
+      <div class="pa-sidebar well well-small">
+        <ul class="nav nav-list">
+          <li ng-class="{ active: $state.includes('users.list') }"><a ui-sref="users.list">All Users</a></li>
+          <li class="nav-header">Top Users</li>
+          <li ng-repeat="user in users | limitTo:2" ui-sref-active="active">
+            <a ui-sref="users.detail({contactId:user.id})">{{user.name}}</a>
+          </li>
+        </ul>
+        <hr>
+        <!-- Another named view -->
+        <div ui-view="menuTip"></div>
+      </div>
+    </div>
+    <div ui-view class="col-xs-6"></div>
+  </div>
+</div>

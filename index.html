@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="usersManager">
+<head>
+	<title></title>
+	<!-- bower:js -->
+	<script src="bower_components/jquery/dist/jquery.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+	<!-- endbower -->
+
+    <!-- bower:css -->
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
+    <!-- endbower -->
+
+	<!-- Custom css -->
+  <link rel="stylesheet" href="assets/css/style.css" />
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+
+  <!-- Custom js -->
+	<script type="text/javascript" src="app.js"></script>
+
+	<script type="text/javascript" src="users/users.js"></script>
+
+
+  <!-- Custom js controllers -->
+  <script type="text/javascript" src="users/controllers/login.controller.js"></script>
+  <script type="text/javascript" src="users/controllers/users.controller.js"></script>
+  <script type="text/javascript" src="users/controllers/users.detail.controller.js"></script>
+  <script type="text/javascript" src="users/controllers/item.edit.controller.js"></script>
+  <script type="text/javascript" src="users/controllers/detail.item.controller.js"></script>
+
+  <!-- Custom js services -->
+  <script type="text/javascript" src="users/services/users.services.js"></script>
+  <script type="text/javascript" src="users/services/auth.service.js"></script>
+  <script type="text/javascript" src="utils/utils.service.js"></script>
+
+
+</head>
+<body>
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" ui-sref="home">Comtrade</a>
+      </div>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li ng-class="{active: $state.includes('users')}"><a ui-sref="users.list">Users</a></li>
+          <li><a ui-sref="about">About</a></li>
+          <!-- <li><a ui-sref="logout">Logout</a></li> -->
+          <li ui-view="hint" class="pull-right ng-scope"></li>
+        </ul>
+      </div><!-- /.navbar-collapse -->
+    </div><!-- /.container-fluid -->
+  </nav>
+
+  <div ui-view class="container" style="padding-top: 80px;"></div>
+
+  <hr>
+  <pre>
+    $state = {{$state.current.name}}
+    $stateParams = {{$stateParams}}
+    $state full url = {{ $state.$current.url.source }}
+  </pre>
+  </body>
+</html>
